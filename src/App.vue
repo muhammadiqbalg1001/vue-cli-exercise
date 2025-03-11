@@ -2,7 +2,7 @@
   <div>
     <app-header></app-header>
     <div class="container">
-      <profile-page :name="name" lastname="Gobel"> </profile-page>
+      <profile-page :name="name" :last="lastname"> </profile-page>
     </div>
     <app-footer></app-footer>
   </div>
@@ -17,6 +17,7 @@ export default {
   data() {
     return {
       name: 'Iqbal',
+      lastname: 'Gobel',
     }
   },
 }

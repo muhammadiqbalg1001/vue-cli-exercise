@@ -8,7 +8,7 @@
       </li>
       <li>
         Lastname :
-        <span>{{ lastname }}</span>
+        <span>{{ last }}</span>
       </li>
     </ul>
   </div>
@@ -16,6 +16,11 @@
 
 <script>
 export default {
-  props: ['name', 'lastname'],
+  props: ['name', 'last'],
+  data() {
+    return {
+      name: 'Baleee',
+    }
+  },
 }
 </script>
