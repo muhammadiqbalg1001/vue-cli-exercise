@@ -1,6 +1,6 @@
 <template>
   <div>
-    <list-car :cars="cars"></list-car>
+    <list-car></list-car>
   </div>
 </template>
 
@@ -11,6 +11,5 @@ export default {
   components: {
     ListCar,
   },
-  props: ['cars'],
 }
 </script>

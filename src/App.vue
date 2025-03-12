@@ -1,7 +1,16 @@
 <template>
+  <app-header></app-header>
   <div>
-    <model-cars :cars="cars"></model-cars>
+    CHILDREN
+    <model-cars></model-cars>
+
+    PARENT
+    <ul>
+      <li v-for="(car, index) in cars" :key="index">{{ car.Brand }} : {{ car.Model }}</li>
+    </ul>
+    <BUTTon @click="changeCars">Ganti Cars</BUTTon>
   </div>
+  <app-footer></app-footer>
 </template>
 
 <script>
@@ -19,7 +28,17 @@ export default {
       ],
     }
   },
-  methods: {},
+  provide() {
+    return {
+      cars: this.cars,
+      changeCars: this.changeCars,
+    }
+  },
+  methods: {
+    changeCars() {
+      this.cars[0].Brand = 'Nissan'
+    },
+  },
 }
 </script>
 
