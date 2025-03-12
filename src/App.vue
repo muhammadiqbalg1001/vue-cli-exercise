@@ -1,13 +1,23 @@
 <template>
-  <div></div>
+  <div>
+    <model-cars :cars="cars"></model-cars>
+  </div>
 </template>
 
 <script>
+import modelCars from './components/cars/index.vue'
 export default {
-  components: {},
-
+  components: {
+    modelCars,
+  },
   data() {
-    return {}
+    return {
+      cars: [
+        { Model: 'Brio', Brand: 'Honda' },
+        { Model: 'Agya', Brand: 'Toyota' },
+        { Model: 'Ayla', Brand: 'Daihatsu' },
+      ],
+    }
   },
   methods: {},
 }
