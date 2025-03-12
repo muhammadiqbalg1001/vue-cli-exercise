@@ -1,30 +1,15 @@
 <template>
-  <div>
-    <app-header></app-header>
-    <div class="container">
-      <profile-page :name="name" :last="lastname" :age="age" :skills="skills"> </profile-page>
-    </div>
-    <app-footer></app-footer>
-  </div>
+  <div></div>
 </template>
 
 <script>
-import ProfilePage from './components/user/ProfilePage.vue'
 export default {
-  components: {
-    ProfilePage,
-  },
+  components: {},
+
   data() {
-    return {
-      name: 'Iqbal',
-      lastname: 'Gobel',
-      age: 23,
-      skills: {
-        programming: 'Javascript',
-        framework: 'Vue',
-      },
-    }
+    return {}
   },
+  methods: {},
 }
 </script>
 
