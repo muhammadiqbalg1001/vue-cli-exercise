@@ -1,31 +1,27 @@
 <template>
   <app-header></app-header>
   <div>
-    <comp-cars>
-      <template v-slot:cars>
-        <ul>
-          <li v-for="(brand, index) in brands" :key="index">{{ brand }}</li>
-        </ul>
-      </template>
-      <template v-slot:other>
-        <h2>other slot</h2>
-      </template>
-      <strong>default slot</strong>
-    </comp-cars>
+    CHILDREN
+    <model-cars></model-cars>
+
+    PARENT
+    <ul>
+      <li v-for="(car, index) in cars" :key="index">{{ car.Brand }} : {{ car.Model }}</li>
+    </ul>
+    <BUTTon @click="changeCars">Ganti Cars</BUTTon>
   </div>
   <app-footer></app-footer>
 </template>
 
 <script>
-import compCars from './components/cars/brand.vue'
+import modelCars from './components/cars/index.vue'
 
 export default {
   components: {
-    compCars,
+    modelCars,
   },
   data() {
     return {
-      brands: ['Honda', 'Toyota', 'Daihatsu'],
       cars: [
         { Model: 'Brio', Brand: 'Honda' },
         { Model: 'Agya', Brand: 'Toyota' },
@@ -56,8 +52,5 @@ body {
   min-height: 85vh;
   box-sizing: border-box;
   padding: 20px;
-}
-li {
-  color: red;
 }
 </style>
