@@ -1,48 +1,30 @@
 <template>
-  <app-header></app-header>
   <div>
-    <comp-cars>
-      <template v-slot:cars>
-        <ul>
-          <li v-for="(brand, index) in brands" :key="index">{{ brand }}</li>
-        </ul>
-      </template>
-      <template v-slot:other>
-        <h2>other slot</h2>
-      </template>
-      <strong>default slot</strong>
-    </comp-cars>
+    <app-header></app-header>
+    <div class="container">
+      <comp-life v-if="showIt"></comp-life>
+    </div>
+    <app-footer></app-footer>
   </div>
-  <app-footer></app-footer>
 </template>
 
 <script>
-import compCars from './components/cars/brand.vue'
+import compLife from './components/Life/index.vue'
 
 export default {
   components: {
-    compCars,
+    compLife,
   },
+
   data() {
     return {
-      brands: ['Honda', 'Toyota', 'Daihatsu'],
-      cars: [
-        { Model: 'Brio', Brand: 'Honda' },
-        { Model: 'Agya', Brand: 'Toyota' },
-        { Model: 'Ayla', Brand: 'Daihatsu' },
-      ],
+      showIt: true,
     }
   },
-  provide() {
-    return {
-      cars: this.cars,
-      changeCars: this.changeCars,
-    }
-  },
-  methods: {
-    changeCars() {
-      this.cars[0].Brand = 'Nissan'
-    },
+  mounted() {
+    setTimeout(() => {
+      this.showIt = false
+    }, 3000)
   },
 }
 </script>
