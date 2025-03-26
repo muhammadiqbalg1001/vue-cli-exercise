@@ -6,12 +6,32 @@ import Footer from './components/generals/AppFooter.vue'
 const app = createApp(App)
 
 app.directive('custDir', {
+  created(el) {
+    console.log(el.parentNode)
+    console.log('created')
+  },
   beforeMount(el, binding) {
+    console.log(el.parentNode)
+    console.log('beforeMount')
+
     el.style.color = binding.modifiers.blue ? 'blue' : 'red'
 
-    el.style.fontSize = binding.modifiers.small ? '12px' : '24px'
+    el.style.fontSize = binding.modifiers.small ? '12px' : '36px'
 
     el.innerHTML = binding.value
+  },
+  mounted(el) {
+    console.log(el.parentNode)
+    console.log('mounted')
+  },
+  beforeUpdate(el, binding) {
+    console.log(el)
+    console.log(binding)
+    el.innerHTML = binding.value
+    console.log('beforeUpdate')
+  },
+  updated() {
+    console.log('updated')
   },
 })
 
