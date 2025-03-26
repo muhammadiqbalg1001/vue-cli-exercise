@@ -1,36 +1,19 @@
 <template>
-  <div>
-    <app-header></app-header>
-    <div class="container">
-      <button @click="this.activeComp = 'comp-apple'">Apple</button>
-      <button @click="this.activeComp = 'comp-grape'">Grape</button>
-
-      <!-- <comp-apple v-if="activeComp === 'comp-apple'"></comp-apple>
-      <comp-grape v-if="activeComp === 'comp-grape'"></comp-grape> -->
-
-      <keep-alive include="comp-apple, comp-grape">
-        <component :is="activeComp"></component>
-      </keep-alive>
-
-      <div id="dialog_ishere"></div>
-    </div>
-    <app-footer></app-footer>
+  <app-header></app-header>
+  <div class="container">
+    <comp-directives></comp-directives>
   </div>
+  <app-footer></app-footer>
 </template>
 
 <script>
-import compApple from './components/Fruits/apple.vue'
-import compGrape from './components/Fruits/grape.vue'
-
+import compDirectives from './components/Directives/index.vue'
 export default {
   components: {
-    compApple,
-    compGrape,
+    compDirectives,
   },
   data() {
-    return {
-      activeComp: 'comp-apple',
-    }
+    return {}
   },
 }
 </script>
