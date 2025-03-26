@@ -8,7 +8,9 @@
       <!-- <comp-apple v-if="activeComp === 'comp-apple'"></comp-apple>
       <comp-grape v-if="activeComp === 'comp-grape'"></comp-grape> -->
 
-      <component :is="activeComp"></component>
+      <keep-alive include="comp-apple, comp-grape">
+        <component :is="activeComp"></component>
+      </keep-alive>
     </div>
     <app-footer></app-footer>
   </div>

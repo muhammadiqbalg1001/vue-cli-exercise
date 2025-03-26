@@ -2,4 +2,11 @@
   <div>Grape Component</div>
 </template>
 
-<script></script>
+<script>
+export default {
+  name: 'comp-grape',
+  unmounted() {
+    console.log('grape unmounted')
+  },
+}
+</script>
