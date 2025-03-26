@@ -2,29 +2,31 @@
   <div>
     <app-header></app-header>
     <div class="container">
-      <comp-life v-if="showIt"></comp-life>
+      <button @click="this.activeComp = 'comp-apple'">Apple</button>
+      <button @click="this.activeComp = 'comp-grape'">Grape</button>
+
+      <!-- <comp-apple v-if="activeComp === 'comp-apple'"></comp-apple>
+      <comp-grape v-if="activeComp === 'comp-grape'"></comp-grape> -->
+
+      <component :is="activeComp"></component>
     </div>
     <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-import compLife from './components/Life/index.vue'
+import compApple from './components/Fruits/apple.vue'
+import compGrape from './components/Fruits/grape.vue'
 
 export default {
   components: {
-    compLife,
+    compApple,
+    compGrape,
   },
-
   data() {
     return {
-      showIt: true,
+      activeComp: 'comp-apple',
     }
-  },
-  mounted() {
-    setTimeout(() => {
-      this.showIt = false
-    }, 3000)
   },
 }
 </script>
