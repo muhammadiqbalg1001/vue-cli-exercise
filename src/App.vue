@@ -11,6 +11,8 @@
       <keep-alive include="comp-apple, comp-grape">
         <component :is="activeComp"></component>
       </keep-alive>
+
+      <div id="dialog_ishere"></div>
     </div>
     <app-footer></app-footer>
   </div>
