@@ -11,11 +11,7 @@ app.directive('custDir', {
     console.log('created')
   },
   beforeMount(el, binding) {
-    console.log(el.parentNode)
-    console.log('beforeMount')
-
     el.style.color = binding.modifiers.blue ? 'blue' : 'red'
-
     el.style.fontSize = binding.modifiers.small ? '12px' : '36px'
 
     el.innerHTML = binding.value
